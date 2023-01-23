@@ -1,32 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-
+import { useState, useEffect } from 'react'
+import Header from '../Componets/Header'
+import Coin from '../Componets/Coin'
+import axios from 'axios'
 function App() {
-  const [count, setCount] = useState(0)
+  const [coins, setCoins] = useState([])
+  const [search, setSearch] = useState('')
+
+  useEffect(() => {
+  axios
+  .get(
+    'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
+    )
+  .then(res => {
+    setCoins(res.data);
+  })
+  .catch(error => console.log(error));
+}, []);
+
+const handleChange = e => {
+  setSearch(e.target.value)
+  console.log(search)}
+
+  const filteredCoins = coins.filter(coin =>
+    coin.name.toLowerCase().includes(search.toLowerCase()))
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+    <Header />
+    <div>
+      <input type='textarea' className = 'app__searchbar--bar' placeholder="Search For A Coin" onChange = {handleChange}/>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+        {filteredCoins.map(coin => {
+          return ( <Coin key={coin.id} name={coin.name} image={coin.image} symbol={coin.symbol} price={coin.currrent_price} />)
+        })}
     </div>
   )
 }
