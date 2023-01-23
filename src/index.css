@@ -1,70 +1,86 @@
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+body{
   margin: 0;
+  background-color: black; 
+  color: gold;
+}
+
+.app__header--img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+.app__header--title{
+  text-align: center;
+  justify-content: center;
+  font-size: 4.5rem;
+  font-family: 'Combo', cursive;
+}
+
+.app__searchbar--bar{
+height: 35px;
+width: 450px;
+background-color: gold;
+text-align: center;
+display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    font-family: 'Combo', cursive;    
+}
+
+.coin-container{
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.coin-row{
+  display: flex;
+  flex-direction: row;
+  justify-items: start;
+  align-items: center;
+  height: 80px;
+  border-bottom: 1px solid gold;
+  width: 900px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.coin{
+  display: flex;
+  align-items: center;
+  padding-right: 24px;
+  min-width: 300px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.coin h1 {
+  font-size: 16px;
+  width: 150px;
+  margin-right: 10px;
+}
+
+.coin  img {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+
+.coin-symbol{
+  text-transform: uppercase;
+}
+
+.coin-data{
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.coin-price{
+  width: 110px;
+}
+.coin-volume{
+  width: 155px;
+}
+
+.coin-marketcap{
+  width: 230px;
 }

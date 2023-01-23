@@ -31,7 +31,7 @@ const handleChange = e => {
       <input type='textarea' className = 'app__searchbar--bar' placeholder="Search For A Coin" onChange = {handleChange}/>
       </div>
         {filteredCoins.map(coin => {
-          return ( <Coin key={coin.id} name={coin.name} image={coin.image} symbol={coin.symbol} price={coin.currrent_price} />)
+          return ( <Coin key={coin.id} name={coin.name} image={coin.image} symbol={coin.symbol} price={coin.current_price} volume={coin.market_cap}/>)
         })}
     </div>
   )
