@@ -8,6 +8,7 @@ body{
   display: block;
   margin-left: auto;
   margin-right: auto;
+  height: 370px;
   
 }
 .app__header--title{
@@ -15,6 +16,7 @@ body{
   justify-content: center;
   font-size: 4.5rem;
   font-family: 'Combo', cursive;
+  margin-bottom: 20px;
 }
 
 .app__searchbar--bar{
@@ -26,6 +28,7 @@ display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 40px;
+    margin-bottom: 50px;
     font-family: 'Combo', cursive;    
 }
 
