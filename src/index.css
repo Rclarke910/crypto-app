@@ -15,7 +15,7 @@ body{
   text-align: center;
   justify-content: center;
   font-size: 4.5rem;
-  font-family: 'Combo', cursive;
+  font-family: cursive;
   margin-bottom: 20px;
 }
 
@@ -29,7 +29,7 @@ display: block;
     margin-right: auto;
     margin-top: 40px;
     margin-bottom: 50px;
-    font-family: 'Combo', cursive;    
+    font-family: cursive;    
 }
 
 .coin-container{
