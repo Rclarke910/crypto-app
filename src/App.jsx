@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import Coin from '../Componets/Coin'
+import Coin from './Coin'
 import axios from 'axios'
 function App() {
   const [coins, setCoins] = useState([])
@@ -26,7 +26,7 @@ const handleChange = e => {
   return (
     <div>
     <h1 className = 'app__header--title'>Today In Crypto</h1>
-    <img src="Crypto-img.png" className='app__header--img'/>
+    <img src="/Crypto-img.png" className='app__header--img'/>
     <form>
       <input type='textarea' className = 'app__searchbar--bar' placeholder="Search For A Coin" onChange = {handleChange}/>
       </form>
